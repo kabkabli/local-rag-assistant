@@ -1,3 +1,6 @@
+# Version 1.1
+
+from langchain_community.vectorstores import Chroma
 from langchain_community.vectorstores import Chroma
 from langchain_ollama import ChatOllama, OllamaEmbeddings
 
