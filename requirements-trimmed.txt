@@ -1,0 +1,23 @@
+# Trimmed to what chat.py / ingest.py actually import.
+# Your original requirements.txt (kept as requirements-full.txt for reference)
+# also pulls in torch, transformers, sentence-transformers, langgraph*,
+# langsmith, kubernetes, and opentelemetry* -- none of which chat.py or
+# ingest.py import directly. These are likely present because requirements.txt
+# was generated with `pip freeze` against a broader/shared environment rather
+# than this project's actual venv.
+#
+# Test this trimmed list in a FRESH venv before trusting it -- chromadb itself
+# may pull in some of these transitively depending on its optional backends,
+# so "not imported directly" doesn't guarantee "safe to remove" without a
+# clean install to verify.
+
+langchain==1.3.14
+langchain-community==0.4.2
+langchain-core==1.5.1
+langchain-ollama==1.1.0
+langchain-chroma
+langchain-text-splitters==1.1.2
+chromadb==1.5.9
+ollama==0.6.2
+pypdf==6.14.2
+rich==15.0.0

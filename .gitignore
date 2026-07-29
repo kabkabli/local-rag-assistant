@@ -3,3 +3,46 @@ __pycache__/
 *.pyc
 .idea/
 chroma_db/
+# AI tools
+Tools OCR Bai du MarkitDown Microsoft/
+PaddleOCR-main/
+markitdown-main/
+
+# Archives
+*.zip
+
+# Logs
+logs/
+
+# Chroma database
+chroma_db/
+database/chroma_db/
+
+# Cache
+cache/
+
+# Backups
+backups/
+
+# OCR tools
+PaddleOCR-main/
+Tools OCR Bai du MarkitDown Microsoft/
+
+# archives
+*.zip
+
+# databases
+chroma_db/
+
+# logs
+logs/
+
+# cache
+cache/
+
+# backups
+backups/
+
+# Python
+__pycache__/
+*.pyc
