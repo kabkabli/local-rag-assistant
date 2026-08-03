@@ -1,0 +1,27 @@
+# Work Log – 2026-07-30
+
+Work Summary (save as Work_Log_2026-07-30.md) 
+
+## Completed
+- Verified Python 3.11 virtual environment.
+- Installed Microsoft MarkItDown in editable mode.
+- Confirmed package location.
+- Successfully imported:
+  - MarkItDown
+  - FileConversionException
+- Successfully converted a PDF (AZ-900 Study Guide) to Markdown.
+- Verified MarkItDown repository structure.
+- Confirmed PyCharm warning is IDE-only and does not affect execution.
+
+## Known Issues
+- PyCharm: "Cannot find declaration" warning.
+- ffmpeg not installed (only impacts audio/video conversion).
+
+## Next Tasks
+- Integrate MarkItDown into the ingestion pipeline.
+- Test DOCX, PPTX, XLSX, HTML, and TXT conversion.
+- Add OCR fallback for scanned PDFs.
+- Install ffmpeg when multimedia support is needed.
+
+## Sprint Status
+Sprint 6: ~95% complete.

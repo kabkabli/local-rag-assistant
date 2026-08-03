@@ -1,28 +1,43 @@
 from pathlib import Path
-from markitdown import MarkItDown
+
+import markitdown
+from markitdown._exceptions import FileConversionException
 
 
 class MarkItDownProvider:
     """
-    Wrapper around Microsoft's MarkItDown library.
+    Wrapper around Microsoft MarkItDown.
 
     Responsible only for converting a document into Markdown.
     """
 
     def __init__(self):
-        self.converter = MarkItDown()
+        self.converter = markitdown.MarkItDown()
 
     def convert(self, file_path: str | Path) -> str:
         """
-        Convert a supported document to Markdown.
+        Convert a document to Markdown.
 
         Args:
             file_path: Path to the document.
 
         Returns:
             Markdown text.
+
+        Raises:
+            FileNotFoundError: If the file does not exist.
+            RuntimeError: If MarkItDown cannot convert the document.
         """
+        path = Path(file_path)
 
-        result = self.converter.convert(str(file_path))
+        if not path.exists():
+            raise FileNotFoundError(f"Document not found: {path}")
 
-        return result.text_content
+        try:
+            result = self.converter.convert(str(path))
+            return result.text_content
+
+        except FileConversionException as e:
+            raise RuntimeError(
+                f"Failed to convert '{path}'.\n{e}"
+            ) from e
